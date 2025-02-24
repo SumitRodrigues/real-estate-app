@@ -1,15 +1,10 @@
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import { Link } from "expo-router";
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <View style={styles.container}>
+      <Text style={styles.welcomeText}>Welcome to Nestify</Text>
       <Link href="/sign-in">Sign In</Link>
       <Link href="/explore">Explore</Link>
       <Link href="/profile">Profile</Link>
@@ -17,3 +12,16 @@ export default function Index() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  welcomeText: {
+    fontWeight: "bold",
+    fontSize: 18, // `text-lg` in Tailwind is approximately 18px
+    marginVertical: 10,
+  },
+});
